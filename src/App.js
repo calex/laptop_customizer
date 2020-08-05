@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import './App.css';
 
+import Header from './Header.js';
 import Summary from './Summary.js';
 import Features from './Features.js';
 
@@ -38,9 +39,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header>
-          <h1>ELF Computing | Laptops</h1>
-        </header>
+        <Header companyName="ELF Computing" category="Laptops" />
         <main>
           <Features 
             features={this.props.features} 

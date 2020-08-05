@@ -4,10 +4,12 @@ import slugify from 'slugify';
 
 import Feature from './Feature.js';
 
+import FEATURESTORE from './FEATURESTORE.js';
+
 class FeatureOptions extends Component {
   render() {
 
-      const options = this.props.features[this.props.feature].map(item => {
+      const options = FEATURESTORE[this.props.feature].map(item => {
           const itemHash = slugify(JSON.stringify(item));
     
             return (
@@ -23,9 +25,12 @@ class FeatureOptions extends Component {
       });
   
     return (
-      <>
-        {!!this.props.features && options}
-      </>
+      <fieldset className="feature" key={this.props.featureHash}>
+        <legend className="feature__name">
+          <h3>{this.props.feature}</h3>
+        </legend>
+        {options}
+      </fieldset>
     )
   }
 };

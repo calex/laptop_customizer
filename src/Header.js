@@ -1,0 +1,11 @@
+import React, { Component } from 'react';
+
+function Header(props) {
+    return (
+        <header>
+            <h1>{props.companyName} | {props.category}</h1>
+        </header>
+    );
+};
+
+export default Header;

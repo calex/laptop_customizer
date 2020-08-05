@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
 import SummaryItem from './SummaryItem.js';
+import SummaryTotal from './SummaryTotal.js';
 
 import './SummaryStyles.css';
-
-import returnInUSCurrencyFormat from './helpers/returnInUSCurrencyFormat.js';
 
 class Summary extends Component {
   render() {
@@ -25,12 +24,7 @@ class Summary extends Component {
       <section className="main__summary">
         <h2>Your cart</h2>
         {!!this.props && summaryItems}
-        <div className="summary__total">
-          <div className="summary__total__label">Total</div>
-          <div className="summary__total__value">
-            {returnInUSCurrencyFormat(total)}
-          </div>
-        </div>
+        <SummaryTotal total={total} />
       </section>
     );
   }
